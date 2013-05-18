@@ -1,0 +1,27 @@
+
+
+
+#################        zOeCher Bot 6.x Edition     #####################
+
+    ****** REQUIRED Packages *****
+    1) Python 2.7.x
+    2) Twisted 12.0.0 or higher
+    3) git-core
+    4) Sqlite3
+################
+    
+    rename config file in settings dir (simple_config.py to config.py)
+    then run zoecher.py
+    
+    to add zoecher bot to auto start system
+    copy zoecher.sh to /etc/init.d/zoecher
+    then type:
+	update-rc.d zoecher defaults
+	
+	service zoecher start
+	service zoecher stop
+	
+	
+				    Santa TM!
+        
+    

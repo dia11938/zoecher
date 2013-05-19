@@ -227,7 +227,7 @@ zooPyVer = 'v%s [%s]' % (sys.version.split(' (')[0],sys.version.split(')')[0].sp
 ######################## Bot Version ## DO NOT EDIT !!!
 SVN_REPOS = 'http://zoecher.smz.im/trunk'
 BOT_VER = {'rev': 6,
-           'botver': {'ver': '%s.'+tmpver+'-svn',
+           'botver': {'ver': '%s.'+tmpver+'-git',
                       'os': ''}}
 
 

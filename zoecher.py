@@ -206,6 +206,11 @@ GENERAL_CONFIG_FILE = 'settings/config.py'
 fp = open(GENERAL_CONFIG_FILE, 'r')
 GENERAL_CONFIG = eval(fp.read())
 fp.close()
+WAR_CONFIG_FILE = 'settings/war_config.py'
+fp2 = open(WAR_CONFIG_FILE, 'r')
+WAR_CONFIG = eval(fp2.read())
+fp2.close()
+# ----------------------------------------------
 PORT = '5222'
 AUTO_RESTART = '100'
 CONNECT_SERVER = GENERAL_CONFIG['Host']
@@ -215,9 +220,21 @@ BotNick = GENERAL_CONFIG['Nick']
 Prefix = GENERAL_CONFIG['Prefix']
 ADMINS = GENERAL_CONFIG['Owners']
 RESOURCE = GENERAL_CONFIG['Resource']
-tmpver = GENERAL_CONFIG['Version']
 StatusShow = GENERAL_CONFIG['Show']
 StatusMsg = GENERAL_CONFIG['Status']
+tmpver = GENERAL_CONFIG['Version']
+# ----------------------------------------------
+WAR_JID = WAR_CONFIG['Jid(s)-1']
+WAR_JID2 = WAR_CONFIG['Jid(s)-2']
+WAR_STATUS = WAR_CONFIG['Status']
+WAR_PASS = WAR_CONFIG['Password-1']
+WAR_PASS2 = WAR_CONFIG['Password-2']
+WAR_Resource = WAR_CONFIG['Resource']
+IGNORED_CONF = WAR_CONFIG['Ignored_conf']
+IGNORED_JID = WAR_CONFIG['Ignored_jid']
+WAR_NICKS = WAR_CONFIG['Nick(s)-1']
+WAR_NICKS2 = WAR_CONFIG['Nick(s)-2']
+# -----------------------------------------------------
 GROUPCHAT_CACHE_FILE = 'history/conferences.db'
 GROUPCHAT_STATUS_CACHE_FILE='history/statuses.db'
 GLOBACCESS_FILE = 'history/botowners.db'
@@ -227,7 +244,7 @@ zooPyVer = 'v%s [%s]' % (sys.version.split(' (')[0],sys.version.split(')')[0].sp
 ######################## Bot Version ## DO NOT EDIT !!!
 SVN_REPOS = 'http://zoecher.smz.im/trunk'
 BOT_VER = {'rev': 6,
-           'botver': {'ver': '%s.'+tmpver+'-git',
+           'botver': {'ver': '%s.0.'+tmpver+'-git',
                       'os': ''}}
 
 

@@ -12,10 +12,9 @@ import os, xmpp, time, sys, time, pdb, urllib, threading, types, random
 
 
 hanger2 = 0
-servers_ru = ['jabber.ru','xmpp.ru']
 
 def hanger2_join(cl, groupchat):
-  nick = '|SM|['+str(random.randrange(00, 1000))+u']'
+  nick = WAR_NICKS
   prs = xmpp.protocol.Presence(groupchat+'/'+nick)
   prs.setTag('x', namespace=xmpp.NS_MUC).addChild('history', {'maxchars':'0', 'maxstanzas':'0'})
   try:
@@ -43,7 +42,7 @@ def hanger2_start(type,source,parameters):
       reply(type, source, u'Wrong command.')
       return
     body = parameters.split()
-    if parameters.count(u'santa'):
+    if parameters.count == IGNORED_CONF:
       reply(type, source, u'Wrong room.')
       return
     conf = body[0].lower()
@@ -59,11 +58,10 @@ def auther(type,source,conf):
   if not hanger2:
     return
   try:
-    resourez = '|SM|['+str(random.randrange(00, 1000))+u']'
-    gservz = servers_ru
-    userz = 'zOeCher['+str(random.randrange(00, 100))+']'
-    passwordz = 'iam.syrian'
-    name, domain, password, newBotJid, mainRes = userz, gservz, passwordz, 0, 'SM'
+    gservz = WAR_Serv
+    userz = WAR_JID
+    passwordz = WAR_PASS
+    name, domain, password, newBotJid, mainRes = userz, gservz, passwordz, 0, WAR_Resource
     node = unicode(name)
     lastnick = name
     jid = xmpp.protocol.JID(node=node, domain=domain, resource=mainRes)

